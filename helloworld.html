@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="http://www.runoob.com/images/" target="_blank">
+    <title>hello world</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" charset="utf-8">
+    <style>
+        a {
+            color: blue;
+            margin: 20px;
+            font-size: 34px;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function test() {
+            console.log("test")
+        }
+    </script>
+</head>
+
+<body>
+    <table border="1px" width=50% align="center">
+        <tr>
+            <td align="center" colspan="3">hello</td>
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </table>
+
+    <!-- JavaScript -->
+    <script>
+        // 数组
+        var arr = [1, 2, 3, 4];
+        document.write('arr = ' + arr);
+        document.write('<br/>arr[0] = ' + arr[0]);
+
+        // 对象
+        var arr = {
+            firstName: 'hello', lastName: 'world', say() {
+                arr.lastName = ' world!';
+                alert(arr.firstName + arr.lastName);
+            }
+        };
+        document.write('<br/> ' + arr["firstName"]);
+        document.write(' ' + arr.lastName);
+        // 函数
+        var result = (add(10, 298) - 300) * 3;
+        document.write("<br/> result = " + result);
+
+        var num = new Number;
+        num = 10;
+        document.write('<br/> num is Number ' + ('hello' instanceof String) + ' num = ' + num);
+
+        document.write("<br/>");
+        // 函数定义
+        function add(a, b) {
+            return a + b;
+        }
+
+        function onSay() {
+            arr.say();
+        }
+    </script>
+
+    <div id="say" onclick="onSay()">Say</div>
+
+    <!-- 页面元素---段落 -->
+    <p class="name">hello world</p>
+    <!-- 页面元素---点击按钮，js代码在head标签中 -->
+    <!-- 注：onclick 方法中要使用 funName + () 的方式使用 -->
+    <button type="button" onclick="alert('hello')">test</button>
+    <!-- 页面元素---点击按钮，js代码在body标签中 -->
+    <button type="button" onclick="myFunction()">click me</button>
+    <div onclick="myFunction()">click me</div>
+
+    <iframe src="https://www.baidu.com" width="100%" name="iframe_a" frameborder="0"></iframe>
+    <p><a href="http://www.runoob.com" target="iframe_a">RUNOOB.COM</a></p>
+    <!-- 无序列表 -->
+    无序列表
+    <ul>
+        <li>
+            <p>hello &#60; world&lt;</p>
+        </li>
+        <li>b</li>
+    </ul>
+
+    <!-- 有序列表 -->
+    有序列表
+    <ol>
+        <li>a</li>
+        <li>b</li>
+    </ol>
+
+    <!-- 自定义列表 -->
+    自定义列表
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+
+    <table frame=void align=center width=100% height=100px style="margin-top: 50px;" border=6 cellspacing=0px
+        cellpadding=10px>
+        <tr height=50px align=center>
+            <th width=110px></th>
+            <th>
+                <font color=blue>星期一</font>
+            </th>
+            <th>
+                <font color=blue>星期二</font>
+            </th>
+            <th>
+                <font color=blue>星期三</font>
+            </th>
+            <th>
+                <font color=blue>星期四</font>
+            </th>
+            <th>
+                <font color=blue>星期五</font>
+            </th>
+        </tr>
+        <tr height=40px align=center>
+            <td></td>
+            <td colspan=5 color=red>
+                <font color="red"><b>上午</b></font>
+            </td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>一</b></font>
+            </td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>语文</td>
+            <td>文体活动</td>
+            <td>数学</td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>二</b></font>
+            </td>
+            <td>语文</td>
+            <td>美术</td>
+            <td>语文</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>三</b></font>
+            </td>
+            <td>体育</td>
+            <td>文体活动</td>
+            <td>文体活动</td>
+            <td>品德与生活</td>
+            <td>英语</td>
+        </tr>
+        <tr height=40px align=center>
+            <td></td>
+            <td colspan=5>
+                <font color="red"><b>下午</b></font>
+            </td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>四</b></font>
+            </td>
+            <td>品德与生活</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>体育</td>
+            <td>美术</td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>五</b></font>
+            </td>
+            <td>文体活动</td>
+            <td>体育</td>
+            <td>专题</td>
+            <td>语文</td>
+            <td>语文</td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>六</b></font>
+            </td>
+            <td>兴趣</td>
+            <td>读书活动</td>
+            <td>音乐</td>
+            <td>音乐</td>
+            <td>数学</td>
+        </tr>
+        <tr height=40px align=center>
+            <td>
+                <font color=blue><b>七</b></font>
+            </td>
+            <td>班队活动</td>
+            <td>课后托管</td>
+            <td>课后托管</td>
+            <td>课后托管</td>
+            <td>课后托管</td>
+        </tr>
+    </table>
+
+    <h1>My first title.</h1>
+    <p style="text-align: center;">My first p.<br /> This p's new row.</p>
+    <a href="">hello world</a>
+    <a href="https://www.baidu.com">baidu</a>
+    <hr>
+    <a href="https://www.baidu.com" target="_blank">baidu</a>
+    <br />
+    <strong>hello world</strong><br />
+    <i>hello world</i><br />
+    <code>hello world</code>
+    <sub>hello world</sub><br />
+    <strong>I</strong><i> am</i><code> a </code><sub>good</sub><sup>student</sup>.<br />
+    <samp>hello world.</samp><br />
+    <del>hello world.</del><br />
+    <kbd>hello world.</kbd>
+
+</body>
+
+</html>

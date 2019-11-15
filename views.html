@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Views</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rec {
+            width: 9rem;
+            height: 3rem;
+            background-color: #0093FD;
+            position: absolute;
+            /*定位的百分比是参照父容器的宽高*/
+            left: 50%;
+            top: 50%;
+            /*使用transform实现元素的居中是参考元素本身的宽高*/
+            transform: translate(-50%, -50%);
+            border-radius: 1.5rem;
+            color: white;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        .tip {
+            width: 9rem;
+            height: 3rem;
+            position: absolute;
+            /*定位的百分比是参照父容器的宽高*/
+            left: 50%;
+            top: 45%;
+            /*使用transform实现元素的居中是参考元素本身的宽高*/
+            transform: translate(-50%, -50%);
+            border-radius: 1.5rem;
+            color: black;
+            margin-left: 0.5rem;
+        }
+
+        .loading {
+            width: 15rem;
+            height: 15rem;
+            position: absolute;
+            /*定位的百分比是参照父容器的宽高*/
+            left: 50%;
+            top: 50%;
+            margin-left: -7rem;
+            margin-top: -10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img id="div-loading" class="loading"
+            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573130946879&di=9cd0a50ace1e81dfdcf1c8427d4f5f27&imgtype=0&src=http%3A%2F%2Fcms-bucket.nosdn.127.net%2Fcatchpic%2Ff%2Ff2%2Ff2b66b97e897766b12f70e335518418d.gif%3FimageView%26tostatic%3D0" />
+        <div id="div-tip" class="tip">加载失败，请刷新~</div>
+        <div id="div-reload" class="rec" onclick="reload()">点击刷新</div>
+    </div>
+
+    <script type="text/javascript">
+        // document.getElementById('div-reload').addEventListener('click', reload);
+        reload();
+        function reload() {
+            document.getElementById('div-tip').style.visibility = 'hidden'
+            document.getElementById('div-reload').style.visibility = 'hidden'
+            document.getElementById('div-loading').style.visibility = 'visible'
+            setTimeout("showRefresh()", 3000)
+        }
+        function showRefresh() {
+            document.getElementById('div-tip').style.visibility = 'visible'
+            document.getElementById('div-reload').style.visibility = 'visible'
+            document.getElementById('div-loading').style.visibility = 'hidden'
+        }
+    </script>
+</body>
+
+</html>

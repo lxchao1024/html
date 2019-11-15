@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                font-size: 34px;
+                padding: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 必填（或必选）项目 -->
+        <form method="POST" onsubmit="return validateForm()" name="myForm" action="https://www.runoob.com/try/demo_source/demo-form.php">
+            xingming: <input type="text" placeholder="please input name..." name="fname" ><br/>
+            <input type="submit" value="commit" >
+        </form>
+        <hr>
+        <input type="number" id="id1" min="100" max="300" required><br/>
+        <button onclick="myFunction1()">verify</button>
+        <p id="demo"></p>
+        <script>
+
+            var obj = {
+                name: "I am Jack!",
+            };
+
+            var arr = ["hello", "world"];
+            for(var i = 0;i<arr.length;i++) {
+                document.write(arr[i] + "\t");
+            }
+            document.write("<br/>");
+
+            document.write("<br/>" + this.obj.name + "<br/>");
+
+            function validateForm() {
+                var x = document.forms["myForm"]["fname"].value;
+                if(x == null || x == "") {
+                    alert("please input your name");
+                    return false;
+                }
+
+                var atpost = x.indexOf("@");
+                var dotpost = x.lastIndexOf(".");
+                if(atpost < 1 || dotpost < atpost + 2 || dotpost + 2 >= x.length) {
+                    alert("不是一个有效的 e-mail 地址");
+                    return false;
+                }
+                console.log("validateForm");
+            }
+
+            // checkValidity() 方法
+            function myFunction() {
+                var inputNum = document.getElementById("id1");
+                if(inputNum.checkValidity() == false) {
+                    document.getElementById("demo").innerHTML = inputNum.validationMessage;
+                } else {
+                    document.getElementById("demo").innerHTML = "in";
+                }
+            }
+
+            function myFunction1() {
+                var txt = "";
+                var inputObj = document.getElementById("id1");
+                if (!isNumeric(inputObj.value)) {
+                    txt = "not number";
+                } else if (inputObj.validity.rangeUnderflow) {
+                    txt = "too low";
+                } else {
+                    txt = "input success";
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+
+            function isNumeric(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            }
+        </script>
+    </body>
+</html>
